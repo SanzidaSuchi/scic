@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "NEW ARRAIVAL ONE",
+        "price": "23$",
+        "img": "https://i.ibb.co/9w8KSmW/m1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "NEW ARRAIVAL TWO",
+        "price": "24$",
+        
+        "img": "https://i.ibb.co/9cjYLrp/m2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "NEW ARRAIVAL THREE",
+        "price": "25$",
+        "img": "https://i.ibb.co/dBH1njM/m3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "NEW ARRAIVAL FOUR",
+        "price": "26$",
+        "img": "https://i.ibb.co/qgZmfTq/m4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "NEW ARRAIVAL FIVE",
+        "price": "63$",
+        "img": "https://i.ibb.co/pPrQt9M/m5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "NEW ARRAIVAL SIX",
+        "price": "45$",
+        "img": "https://i.ibb.co/pPrQt9M/m5.jpg"
+    },
+    {
+        "id": 7,
+        "name": "NEW ARRAIVAL SEVEN",
+        "price": "45$",
+        "img": "https://i.ibb.co/yS1YjkF/m6.jpg"
+    },
+    {
+        "id": 8,
+        "name": "NEW ARRAIVAL EIGHT",
+        "price": "45$",
+        "img": "https://i.ibb.co/fQZMm0f/m7.jpg"
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
