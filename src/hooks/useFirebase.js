@@ -121,7 +121,7 @@ const useFirebase = () => {
   };
 
   // const hanldeUserInfoRegister = (email) => {
-  //   fetch("https://still-waters-75696.herokuapp.com/addUserInfo", {
+  //   fetch("http://localhost:5000//addUserInfo", {
   //     method: "POST",
   //     headers: { "content-type": "application/json" },
   //     body: JSON.stringify({ email }),

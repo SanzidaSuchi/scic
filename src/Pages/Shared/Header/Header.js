@@ -48,20 +48,20 @@ const Header = () => {
               activeStyle={active}>
                 WOMEN
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/dashboard" 
+              <Nav.Link as={NavLink} to="/dashboardr" 
               style={navStyle}
               activeStyle={active}>
                 KIDS
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/dashboard" 
+              <Nav.Link as={NavLink} to="/dashboa" 
               style={navStyle}
               activeStyle={active}>
-                EXCLUSIVE
+                ABOUT US
               </Nav.Link>
               <Nav.Link as={NavLink} to="/dashboard" 
               style={navStyle}
               activeStyle={active}>
-                ABOUT US
+                DASHBOARD
               </Nav.Link>
  
               {!email ? (
