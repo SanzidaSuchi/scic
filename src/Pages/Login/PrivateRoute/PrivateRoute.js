@@ -1,17 +1,43 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import { Navigate, useLocation  } from "react-router-dom";
+import { Redirect, Route } from 'react-router-dom';
+
 import useAuth from '../../../hooks/useAuth';
 
 
-const PrivateRoute = ({ children, ...rest }) => {
-  const { user, isLoading } = useAuth();
-  let location = useLocation();
-  if (isLoading) { return <Spinner /> }
-  if (user.email) {
-      return children;
+function PrivateRoute(props) {
+  const { children, ...rest } = props;
+
+  const { allContext } = useAuth();
+  const { user,loading } = allContext;
+
+  if (loading) {
+    return (
+      <div className="text-center my-5 py-5">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
   }
-  return <Navigate to="/login" state={{ from: location }} />;
-};
+
+  return (
+      <Route
+      {...rest}
+      render={({ location }) =>
+        user.displayName ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
+}
 
 export default PrivateRoute;

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import Gift from "../../../images/g1.jpg";
 import Service from '../Service/Service';
+import Testmonial from './../Testmonial/Testmonial';
 
 
 const Home = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://stark-mountain-90454.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -70,7 +71,8 @@ const Home = () => {
             
           ))}
         </Row>
-      </Container> 
+      </Container>
+      <Testmonial></Testmonial> 
         </div>
     );
 };

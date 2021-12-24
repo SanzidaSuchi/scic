@@ -3,13 +3,14 @@ import { Col, Form, FormControl, InputGroup, Row } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useLocation, useNavigate, } from "react-router-dom";
+import { NavLink, useLocation  } from "react-router-dom";
 import google from "../../../images/google.png";
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const {allContext}= useAuth();
     const { getEmail,getPassword,signInWithEmail, error,user,  setUser,setError,signInWithGoogle } = allContext;
-    const navigate = useNavigate();
+    const history = useHistory();
 console.log(user)
   const location = useLocation();
   const redirect = location?.state?.from || "/home";
@@ -36,7 +37,7 @@ console.log(user)
               .then((result) => {
                 console.log(result.user);
                 setUser(result.user);
-                navigate(redirect);
+                history.push(redirect);
               })
               .catch((err) => {
                 setError(err.message);
@@ -104,7 +105,7 @@ console.log(user)
             signInWithGoogle()
               .then((result) => {
                 setUser(result.user);
-                navigate(redirect);
+                history.push(redirect);
               })
               .catch((err) => {
                 setError(err.message);

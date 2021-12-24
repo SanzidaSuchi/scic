@@ -10,15 +10,15 @@ const Testmonial = () => {
                 
                 <Row className="mt-5">
                     <Col md={4}>
-                        <h7>I love my watch from watches.com.The Shipping and packing from watches was fantastics!.I highly recommend their watches.</h7>
+                        <h7>I love my dress from artisan outfitter.The Shipping and packing from artisan was fantastics!.I highly recommend their watches.</h7>
                         <p>-Shera Shorma</p>
                     </Col>
                     <Col md={4}>
-                        <h7>Watches watch has my favourite Brand.The Shipping and packing from watches was fantastics!.I highly recommend their watches.</h7>
+                        <h7>Artisan  has my favourite Brand.The Shipping and packing from artisan was fantastics!.I highly recommend their watches.</h7>
                         <p>-Alok babu</p>
                     </Col>
                     <Col md={4}>
-                        <h7>I was interested to purching a watch but skyptical.The Shipping and packing from watches was fantastics!.I highly recommend their watches.</h7>
+                        <h7>I was interested to purching a wallet but skyptical.The Shipping and packing from artisan was fantastics!.I highly recommend their watches.</h7>
                         <p>-Juthi Islam</p>
                     </Col>
                 </Row>

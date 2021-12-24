@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {  Route, Link, Routes } from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import "./Dashboard.css";
 import AddServices from "../AddServices/AddServices";
@@ -12,12 +12,12 @@ import Pay from "../Pay/Pay";
 import ManageProduct from "../ManageProduct/ManageProduct";
 
 const Dashbaord = () => {
-  // let { path, url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
   const { user } = useFirebase();
   const [isAdmi, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+    fetch(`https://stark-mountain-90454.herokuapp.com/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data[0]?.role === "admin") {
@@ -35,41 +35,41 @@ const Dashbaord = () => {
           <div className="col-md-3 ">
             <div className="dashboard">
               <h5>DashBoard</h5>
-              <Link to={`/dashboard`}>
+              <Link to={`${url}`}>
                 <li className="dashboard-menu mt-5">Book</li>
               </Link>
 
-              <Link to={`/dashboard/myOrder`}>
+              <Link to={`${url}/myOrder`}>
                 <li className="dashboard-menu mt-5">My Order list</li>
               </Link>
 
-              <Link to={`/dashboard/review`}>
+              <Link to={`${url}/review`}>
                 <li className="dashboard-menu mt-5">Review</li>
               </Link>
-              <Link to={`/dashboard/pay`}>
+              <Link to={`${url}/pay`}>
                 <li className="dashboard-menu mt-5">Payment</li>
               </Link>
                     <div className="admin-dashboard">
                     {isAdmi && (
-                    <Link to={`/dashboard/addService`}>
+                    <Link to={`${url}/addService`}>
                     <li className="dashboard-menu">Add NewProduct</li>
                 </Link>
                 )}
                 {isAdmi && (
-                <Link to={`/dashboard/makeAdmin`}>
+                <Link to={`${url}/makeAdmin`}>
                 <li className="dashboard-menu">Make Admin</li>
                 </Link>
 
-                )}
+                  )} 
                 {isAdmi && (
         
-                <Link to={`/dashboard/manageAllOrder`}>
+                <Link to={`${url}/manageAllOrder`}>
                 <li className="dashboard-menu">Manage All</li>
                 </Link>
                         )}
                 {isAdmi && (
         
-                <Link to={`/dashboard/manageProduct`}>
+                <Link to={`${url}/manageProduct`}>
                 <li className="dashboard-menu">Manage Product</li>
                 </Link>
                         )}
@@ -77,29 +77,29 @@ const Dashbaord = () => {
             </div>
           </div>
           <div className="col-md-9">
-            <Routes>
-              <Route exact path={`/dashboard/myOrder`}>
+            <Switch>
+              <Route exact path={`${path}/myOrder`}>
                 <MyOrder></MyOrder>
               </Route>
-              <Route exact path={`/dashboard/review`}>
+              <Route exact path={`${path}/review`}>
                 <Review></Review>
               </Route>
-              <Route exact path={`/dashboard/makeAdmin`}>
+              <Route exact path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
               </Route>
-              <Route exact path={`/dashboard/addService`}>
+              <Route exact path={`${path}/addService`}>
                 <AddServices></AddServices>
               </Route>
-              <Route exact path={`/dashboard/manageAllOrder`}>
+              <Route exact path={`${path}/manageAllOrder`}>
                 <ManageAllOrder></ManageAllOrder>
               </Route>
-              <Route exact path={`/dashboard/pay`}>
+              <Route exact path={`${path}/pay`}>
                <Pay></Pay>
               </Route>
-              <Route exact path={`/dashboard/manageProduct`}>
+              <Route exact path={`${path}/manageProduct`}>
                <ManageProduct></ManageProduct>
               </Route>
-            </Routes>
+            </Switch>
           </div>
         </div>
       </div>

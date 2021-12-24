@@ -12,7 +12,7 @@ const ServiceDetails = () => {
 
 
     useEffect(() =>{
-        fetch('http://localhost:5000/services')
+        fetch('https://stark-mountain-90454.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setPlaces(data))
     },[])
@@ -20,7 +20,7 @@ const ServiceDetails = () => {
     /* take input and send to server */
     const onSubmit = data => {
     data.status = "Pending"
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://stark-mountain-90454.herokuapp.com/orders', data)
         .then(res => {
             if (res.data.insertedId) {
                 reset();

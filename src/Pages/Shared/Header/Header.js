@@ -48,12 +48,12 @@ const Header = () => {
               activeStyle={active}>
                 WOMEN
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/dashboardr" 
+              <Nav.Link as={NavLink} to="/r" 
               style={navStyle}
               activeStyle={active}>
                 KIDS
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/dashboa" 
+              <Nav.Link as={NavLink} to="/u" 
               style={navStyle}
               activeStyle={active}>
                 ABOUT US
